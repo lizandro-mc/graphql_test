@@ -5,7 +5,11 @@ const typeDefinitions = /* GraphQL */ `
     info: String!
     feed: [Link!]!
   }
- 
+
+  type Mutation {
+    postLink(url: String!, description: String!): Link!
+  }
+
   type Link {
     id: ID!
     description: String!
@@ -44,17 +48,47 @@ const resolvers = {
       // 3
       feed: () => links
     },
-   /*
+  /*
     4. Finally, you're adding three more resolvers for the fields on the Link type from the schema definition. We'll discuss what the parent argument that's passed into the resolver here is in a bit
 
     The implementation of the Link resolvers is trivial, you can omit them and the server will work in the same way as it did before 👌. We just wanted you to understand what's happening under the hood 🚗.
    */ 
-    Link: {
+  /* Link: {
       id: (parent: Link) => parent.id,
       description: (parent: Link) => parent.description,
       url: (parent: Link) => parent.url
+    },
+  */
+    Mutation: {
+      postLink: (parent: unknown, args: { description: string; url: string }) => {
+        // 1
+        let idCount = links.length
+
+        // 2
+        const link: Link = {
+          id: `link-${idCount}`,
+          description: args.description,
+          url: args.url
+        }
+   
+        links.push(link)
+   
+        return link
+      }
     }
 }
+
+/*
+  mutation {
+  postLink(
+    url: "www.prisma.io"
+    description: "Prisma replaces traditional ORMs"
+  ) {
+    id
+  }
+}
+
+*/ 
 
 
 export const schema = makeExecutableSchema({
