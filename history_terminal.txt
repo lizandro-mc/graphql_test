@@ -1,0 +1,44 @@
+
+  243  node --version
+  244  npm --version
+  245  sudo npm cache clean -f
+  246  npm --version
+  247  sudo npm cache clean -f
+  248  npm cache clean -f
+  249  npm install -g n
+  250  npm install -g npm
+  251  npm install -g n
+  252  sudo n stable
+  253  n stable
+  254  sudo apt-get install nodejs
+  255  sudo apt-get update --fix-missing
+  256  sudo apt-get install nodejs
+  257  sudo npm cache clean -f
+  258  sudo apt-get install npm
+  259  sudo npm cache clean -f
+  260  sudo npm install -g npm
+  261  sudo npm cache clean -f
+  262  sudo npm install -g npm
+  263  sudo npm install -g n
+  264  n stable
+  265  sudo n stable
+  266  sudo npm install -g n
+  267  sudo npm install -g npm
+  268  node --version
+  269  npm --version
+  270  sudo node --version
+  271  which node
+  272  rm /home/lizandro/.nvm/versions/node/v14.21.3/bin/node
+  273  which node
+  274  node --version
+  275  npm init
+  276  npm install babel-cli
+  277  npm install babel-preset-env
+  278  npm start
+  279  npm run start
+  280  npm i graphql-yoga
+  281  npm install -dev  graphiql react react-dom graphql
+  282  npm install -D  graphiql react react-dom graphql
+  283  npx --version
+  284  npm i -D --save-exact typescript @types/node ts-node ts-node-dev cross-env
+npx tsc --init

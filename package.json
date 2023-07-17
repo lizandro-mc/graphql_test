@@ -1,0 +1,30 @@
+{
+  "name": "graphql_test",
+  "version": "1.0.0",
+  "description": "Repositorio para la revision de concepto y usos de graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --exit-child --respawn src/main.ts",
+    "start": "ts-node src/main.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/schema": "^10.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "graphql-yoga": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.2",
+    "cross-env": "7.0.3",
+    "graphiql": "^3.0.2",
+    "graphql": "^16.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "10.9.1",
+    "ts-node-dev": "2.0.0",
+    "typescript": "5.1.6"
+  }
+}
