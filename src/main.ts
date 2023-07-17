@@ -1,19 +1,15 @@
-import { makeExecutableSchema } from '@graphql-tools/schema'
+import { createYoga } from 'graphql-yoga'
+import { createServer } from 'http'
+import { schema } from './schema'
+ 
+function main() {
+  const yoga = createYoga({ schema })
+  const server = createServer(yoga)
 
-const typeDefinitions = /* GraphQL */ `
-  type Query {
-    hello: String!
-  }
-`
-
-const resolvers = {
-    Query: {
-      hello: () => 'Hello World!'
-    }
-  }
-
-
-  export const schema = makeExecutableSchema({
-    resolvers: [resolvers],
-    typeDefs: [typeDefinitions]
+  server.listen(4000, () => {
+    console.info('Server is running on http://localhost:4000/graphql')
   })
+}
+ 
+// Using curl curl -X POST http://localhost:4000/graphql -H "Content-type: application/json" --data-raw '{"query": "query { hello }"}'
+main()
